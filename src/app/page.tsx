@@ -16,7 +16,7 @@ export default function Home() {
   const latestPosts = getAllPosts().slice(0, 2);
 
   return (
-    <main className="py-12">
+    <div className="py-12">
       <Container className="space-y-16">
         <section className="border-4 border-ink bg-blue p-6 shadow-brutal sm:p-10">
           <p className="text-lg font-bold">{SITE.greeting}</p>
@@ -51,7 +51,7 @@ export default function Home() {
           </section>
         )}
       </Container>
-    </main>
+    </div>
   );
 }
 

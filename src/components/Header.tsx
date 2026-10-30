@@ -2,16 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FaYoutube } from "react-icons/fa";
 import Container from "@/components/Container";
-import { SITE } from "@/lib/site";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/videos", label: "Videos" },
-  { href: "/blog", label: "Blog" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
+import { NAV_LINKS, SITE } from "@/lib/site";
 
 export default function Header() {
   const pathname = usePathname();
@@ -24,9 +17,9 @@ export default function Header() {
         </Link>
 
         <div className="flex flex-wrap items-center gap-4">
-          <nav>
+          <nav aria-label="Main">
             <ul className="flex flex-wrap gap-2">
-              {navLinks.map((link) => {
+              {NAV_LINKS.map((link) => {
                 const isActive =
                   link.href === "/"
                     ? pathname === "/"
@@ -48,6 +41,17 @@ export default function Header() {
               })}
             </ul>
           </nav>
+
+          {/* Kept apart from the nav: it leaves the site rather than moving around it. */}
+          <a
+            href={SITE.youtubeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube channel (opens in a new tab)"
+            className="flex size-9 items-center justify-center border-2 border-ink bg-white text-xl text-youtube shadow-brutal-sm transition-transform hover:translate-x-0.75 hover:translate-y-0.75 hover:shadow-none"
+          >
+            <FaYoutube aria-hidden="true" />
+          </a>
         </div>
       </Container>
     </header>

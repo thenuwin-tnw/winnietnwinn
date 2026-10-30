@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { SITE, SITE_DESCRIPTION } from "@/lib/site";
 
@@ -28,7 +29,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <Header />
-        {children}
+        {/* One <main> for every page, so screen readers can jump straight to the content.
+            flex-1 makes it fill the leftover height, which pushes the footer to the bottom. */}
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
