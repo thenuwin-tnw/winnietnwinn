@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaYoutube } from "react-icons/fa";
 import Button from "@/components/Button";
 import Container from "@/components/Container";
+import PhotoFrame from "@/components/PhotoFrame";
 import PostGrid from "@/components/PostGrid";
 import VideoGrid from "@/components/VideoGrid";
 import { getAllPosts } from "@/lib/posts";
@@ -18,21 +19,26 @@ export default function Home() {
   return (
     <div className="py-12">
       <Container className="space-y-16">
-        <section className="border-4 border-ink bg-blue p-6 shadow-brutal sm:p-10">
-          <p className="text-lg font-bold">{SITE.greeting}</p>
-          <h1 className="mt-2 max-w-[20ch] text-4xl font-black uppercase sm:text-5xl">
-            {SITE.headline}
-          </h1>
-          <p className="mt-4 max-w-[50ch] text-lg font-bold">{SITE.intro}</p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Button href={SUBSCRIBE_URL} external>
-              <FaYoutube aria-hidden="true" className="mr-2 inline align-[-0.15em]" />
-              Subscribe <span aria-hidden="true">↗</span>
-              <span className="sr-only"> on YouTube (opens in a new tab)</span>
-            </Button>
-            <Button href="/blog" variant="secondary">
-              Read the blog →
-            </Button>
+        {/* Same layout as the About hero: tilted photo on the left, words on the right. */}
+        <section className="flex flex-col gap-8 border-4 border-ink bg-blue p-6 shadow-brutal sm:flex-row sm:items-center sm:gap-12 sm:p-10">
+          <PhotoFrame src={SITE.photo} position={SITE.photoPosition} />
+
+          <div>
+            <p className="text-lg font-bold">{SITE.greeting}</p>
+            <h1 className="mt-2 max-w-[20ch] text-4xl font-black uppercase sm:text-5xl">
+              {SITE.headline}
+            </h1>
+            <p className="mt-4 max-w-[50ch] text-lg font-bold">{SITE.intro}</p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Button href={SUBSCRIBE_URL} external>
+                <FaYoutube aria-hidden="true" className="mr-2 inline align-[-0.15em]" />
+                Subscribe <span aria-hidden="true">↗</span>
+                <span className="sr-only"> on YouTube (opens in a new tab)</span>
+              </Button>
+              <Button href="/blog" variant="secondary">
+                Read the blog →
+              </Button>
+            </div>
           </div>
         </section>
 

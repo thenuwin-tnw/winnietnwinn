@@ -6,6 +6,9 @@ export const SITE = {
   intro: "Journaling, tech and gear, and everything in between. Pull up a chair ☕",
   youtubeUrl: "https://www.youtube.com/@winnietnwinn",
   email: "winnietnwinn.contact@gmail.com",
+  photo: "/me-desk.jpg", // in public/; shown on the home and About heroes
+  // Which part of the (landscape) photo shows in the square frame: 65% from the left keeps the face in view.
+  photoPosition: "object-[65%_center]",
 };
 
 // Shared by the header and footer: add a page here and it shows up in both.
