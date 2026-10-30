@@ -14,7 +14,6 @@ export const NAV_LINKS = [
   { href: "/videos", label: "Videos" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 // Used for Google results and link previews.
