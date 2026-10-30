@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "@/components/Container";
+import { SITE } from "@/lib/site";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -19,7 +20,7 @@ export default function Header() {
     <header className="border-b-4 border-ink bg-paper">
       <Container className="flex flex-wrap items-center justify-between gap-4 py-4">
         <Link href="/" className="text-2xl font-black uppercase">
-          Earthling
+          {SITE.name}
         </Link>
 
         <div className="flex flex-wrap items-center gap-4">

@@ -97,6 +97,8 @@ function readPost(slug: string): Post {
 }
 
 function getSlugs(): string[] {
+  // Git doesn't keep empty folders, so with zero posts the folder may not exist at all.
+  if (!fs.existsSync(POSTS_DIR)) return [];
   return fs
     .readdirSync(POSTS_DIR)
     .filter((name) => name.endsWith(".md"))
