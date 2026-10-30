@@ -30,8 +30,11 @@ export default function Header() {
                     <Link
                       href={link.href}
                       aria-current={isActive ? "page" : undefined}
-                      className={`block border-2 border-ink px-3 py-1 font-bold uppercase ${
-                        isActive ? "bg-sun" : "bg-paper hover:bg-sun"
+                      // Same language as the filter bars: raised = pressable, sunk in = current page.
+                      className={`block border-2 border-ink px-3 py-1 font-bold uppercase transition-transform ${
+                        isActive
+                          ? "translate-x-0.75 translate-y-0.75 bg-sun"
+                          : "bg-paper shadow-brutal-sm hover:translate-x-0.75 hover:translate-y-0.75 hover:bg-sun hover:shadow-none"
                       }`}
                     >
                       {link.label}

@@ -4,8 +4,8 @@ import Container from "@/components/Container";
 import { NAV_LINKS, SITE } from "@/lib/site";
 
 const socials = [
-  { href: SITE.youtubeUrl, label: "YouTube", icon: FaYoutube, external: true },
-  { href: `mailto:${SITE.email}`, label: `Email ${SITE.email}`, icon: FaEnvelope, external: false },
+  { href: SITE.youtubeUrl, label: "YouTube", icon: FaYoutube, external: true, color: "text-youtube" },
+  { href: `mailto:${SITE.email}`, label: `Email ${SITE.email}`, icon: FaEnvelope, external: false, color: "" },
 ];
 
 export default function Footer() {
@@ -17,13 +17,13 @@ export default function Footer() {
           <p className="mt-2 font-bold">{SITE.headline}</p>
 
           <ul className="mt-4 flex gap-3">
-            {socials.map(({ href, label, icon: Icon, external }) => (
+            {socials.map(({ href, label, icon: Icon, external, color }) => (
               <li key={href}>
                 <a
                   href={href}
                   {...(external && { target: "_blank", rel: "noopener noreferrer" })}
                   aria-label={external ? `${label} (opens in a new tab)` : label}
-                  className="flex size-11 items-center justify-center border-2 border-ink bg-white text-xl shadow-brutal-sm transition-transform hover:translate-x-0.75 hover:translate-y-0.75 hover:shadow-none"
+                  className={`flex size-11 items-center justify-center border-2 border-ink bg-white text-xl shadow-brutal-sm transition-transform hover:translate-x-0.75 hover:translate-y-0.75 hover:shadow-none ${color}`}
                 >
                   <Icon aria-hidden="true" />
                 </a>
