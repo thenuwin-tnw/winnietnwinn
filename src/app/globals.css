@@ -37,3 +37,12 @@ body {
   background: var(--color-paper);
   color: var(--color-ink);
 }
+
+/* Keyboard focus: a thick outline on whatever Tab lands on.
+   :focus-visible only matches keyboard focus, so mouse clicks don't show it. */
+@layer base {
+  :focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+}

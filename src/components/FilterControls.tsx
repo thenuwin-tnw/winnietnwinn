@@ -55,7 +55,7 @@ export default function FilterControls({ filters, searchLabel, children }: Filte
           value={query}
           onChange={(event) => handleSearch(event.target.value)}
           placeholder={`${searchLabel}...`}
-          className="w-full border-4 border-ink bg-white px-4 py-3 font-bold shadow-brutal-sm outline-none focus:bg-sun/30"
+          className="w-full border-4 border-ink bg-white px-4 py-3 font-bold shadow-brutal-sm focus:bg-sun/30"
         />
       </label>
 
